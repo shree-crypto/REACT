@@ -8,10 +8,8 @@ function useCurrencyInfo(currency) {
     fetch(url)
       .then((response) => response.json())
       .then((res) => {
-        console.log(res);
         return setData(res["rates"]);
       });
-    console.log(data);
   }, [currency]);
 
   return data;
