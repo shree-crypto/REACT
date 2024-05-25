@@ -6,7 +6,7 @@ function InputBox({
   onAmountChange,
   onCurrencyChange,
   currencyOption = [],
-  selectCurrency = "usd",
+  selectCurrency = "USD",
   className = "",
 }) {
   const amountInputId = useId();

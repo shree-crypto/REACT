@@ -3,10 +3,14 @@ import { useEffect, useState } from "react";
 function useCurrencyInfo(currency) {
   const [data, setData] = useState({});
   useEffect(() => {
-    let url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`;
+    let url = `'https://api.exchangerate-api.com/v4/latest/${currency}')
+    `;
     fetch(url)
       .then((response) => response.json())
-      .then((res) => setData(res[currency]));
+      .then((res) => {
+        console.log(res);
+        return setData(res["rates"]);
+      });
     console.log(data);
   }, [currency]);
 
